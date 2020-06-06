@@ -14,3 +14,7 @@ p {
 .nameProduct {
     text-transform: uppercase;
 }
+
+.previous {
+    margin-right: 900px;
+}

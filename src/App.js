@@ -1,5 +1,5 @@
 import React from 'react';
-import Liste from './components/Liste'
+import List from './components/List'
 import ProductSheet from './components/ProductSheet';
 import { Switch, Route } from "react-router-dom"
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
     <Switch>
-      <Route exact path="/" component={Liste}/>
+      <Route exact path="/" component={List}/>
       <Route path="/product/:product_name" component={ProductSheet}/>
     </Switch>
     </div>

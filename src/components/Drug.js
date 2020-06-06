@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const Drugs = (props) => {
+const Drug = (props) => {
 
     return(
         <div>
-            <p>{props.name}</p>
+            <p><b>{props.name}</b> : ${props.price}</p>
             <Link to={{
                 pathname:`/product/${props.name}`,
                 data: {
@@ -15,10 +15,10 @@ const Drugs = (props) => {
                     supplier: props.supplier
                 }
             }}>
-                <button>Afficher le produit</button>
+                <button>Show product</button>
             </Link>
         </div>
     )
 }
 
-export default Drugs
+export default Drug
