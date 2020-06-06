@@ -1,0 +1,16 @@
+.product {
+    margin: 5em auto;
+    padding: 1em 0;
+    background-color: rgb(213, 214, 213);
+    border-radius: 5px;
+    width: 30%;
+    box-shadow: 5px 10px 20px rgb(131, 131, 131);
+}
+
+p {
+    padding: 2em 5em;
+}
+
+.nameProduct {
+    text-transform: uppercase;
+}
