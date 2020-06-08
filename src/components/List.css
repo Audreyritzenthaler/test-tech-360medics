@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    margin: 2em;
+}
+
+ul {
+    margin: 5em auto;
+    padding: 1em 0;
+    background-color: rgb(213, 214, 213);
+    border-radius: 5px;
+    width: 50%;
+    box-shadow: 5px 10px 20px rgb(131, 131, 131);
+}
+
+li {
+    list-style-type: none;
+    margin: 5em 0;
+    color: gray;
+}
+
+button {
+    margin: 1em 0;
+}
