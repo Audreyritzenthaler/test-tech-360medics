@@ -40,7 +40,7 @@ class List extends React.Component {
     }
 
     getLocalItem = () => {
-        const local = JSON.parse(localStorage.getItem('lastView')).name
+        const local = JSON.parse(localStorage.getItem('lastView')) && JSON.parse(localStorage.getItem('lastView')).name
 
         this.setState({ 
             viewed: this.state.listDrugs.find(item => item.product_name === local)
@@ -65,8 +65,8 @@ class List extends React.Component {
     
     render() {
         const products = this.state.displayedDrugs
-        const local = JSON.parse(localStorage.getItem('lastView')).name
         const viewed = this.state.viewed
+        const local = JSON.parse(localStorage.getItem('lastView')) && JSON.parse(localStorage.getItem('lastView')).name
         return(
             <div>
                 {
