@@ -6,19 +6,29 @@ import "./ProductSheet.css"
 
 class ProductSheet extends React.Component {
     state = {
-        name: this.props.location.data.name
+        name: this.props.location.data && this.props.location.data.name,
+        price: this.props.location.data && this.props.location.data.price,
+        quantity: this.props.location.data && this.props.location.data.quantity,
+        supplier: this.props.location.data && this.props.location.data.supplier,
     }
 
     saveLocalStorage = () => {
-        localStorage.setItem('lastView', this.state.name)
+        const myViewed = this.state
+        localStorage.setItem('lastView', JSON.stringify(myViewed))
     }
 
+
     componentDidMount() {
-        this.saveLocalStorage()
+        if (!this.props.location.data) {
+            const view = JSON.parse(localStorage.getItem('lastView'))
+            this.setState({ name : view.name, price: view.price, quantity: view.quantity, supplier: view.supplier })
+        } else {
+            this.saveLocalStorage()
+        }
     }
 
     render() {
-        const data = this.props.location.data
+        const data = this.state
         return(
             <div>
                 <div className="previous">

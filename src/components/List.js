@@ -34,13 +34,13 @@ class List extends React.Component {
         const query = e.target.value
 
         this.setState({ 
-            searchTerm: query,
-            displayedDrugs: this.state.listDrugs.filter(item => item.product_name.includes(query))
+            searchTerm: query.toLowerCase(),
+            displayedDrugs: this.state.listDrugs.filter(item => item.product_name.toLowerCase().includes(query))
         })
     }
 
     getLocalItem = () => {
-        const local = localStorage.getItem('lastView')
+        const local = JSON.parse(localStorage.getItem('lastView')).name
 
         this.setState({ 
             viewed: this.state.listDrugs.find(item => item.product_name === local)
@@ -65,7 +65,7 @@ class List extends React.Component {
     
     render() {
         const products = this.state.displayedDrugs
-        const local = localStorage.getItem('lastView')
+        const local = JSON.parse(localStorage.getItem('lastView')).name
         const viewed = this.state.viewed
         return(
             <div>
